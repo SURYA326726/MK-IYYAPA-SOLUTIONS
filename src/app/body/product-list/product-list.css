@@ -1,0 +1,23 @@
+.productList {
+  flex-wrap: wrap;
+  padding: 2px;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+  border-radius: 4px;
+  align-items: flex-start;
+}
+.productsHeading {
+  justify-self: center;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.products {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.products::-webkit-scrollbar {
+  display: none; 
+}

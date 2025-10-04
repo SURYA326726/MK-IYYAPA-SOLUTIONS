@@ -1,0 +1,20 @@
+.TrustedOrgCmp{
+    flex-wrap: wrap;
+  padding: 2px;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+  border-radius: 4px;
+ justify-items: center;
+}
+.trustedHeader{
+    justify-self: center;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.orgLogo{
+    border-radius: 200%;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+}

@@ -1,0 +1,20 @@
+.aboutCMP{
+    flex-wrap: wrap;
+  padding: 2px;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+  border-radius: 4px;
+ justify-items: center;
+}
+.aboutHeader{
+    justify-self: center;
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.abountContent{
+     align-self: center;
+     padding: 20px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
