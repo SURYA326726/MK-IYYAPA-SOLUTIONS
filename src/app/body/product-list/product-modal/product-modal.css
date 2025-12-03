@@ -1,0 +1,134 @@
+/* Background Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+}
+
+/* Modal Box */
+.product-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 750px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 
+    0 8px 30px rgba(0,0,0,0.15),
+    0 4px 15px rgba(0,0,0,0.10);
+  padding: 30px 35px 20px 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Close Button - TOP RIGHT */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;    /* ← moved from left to right */
+  font-size: 26px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+  padding: 5px;
+}
+
+.close-btn:hover {
+  color: #d10000;
+  transform: scale(1.1);
+}
+
+
+/* Flex container */
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Left Section */
+.modal-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Product Title → Premium style */
+.product-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1b1b1b;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+  margin-bottom: 5px;
+}
+
+/* Description */
+.product-description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Services */
+.product-services h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.product-services p {
+  font-size: 15px;
+  color: #444;
+}
+
+/* Right Section (Image) */
+.modal-right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-image {
+  width: 95%;
+ margin: 5px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+/* Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.quote-btn {
+  padding: 10px 18px;
+  font-size: 15px;
+  background: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quote-btn:hover {
+  background: #005ed1;
+}

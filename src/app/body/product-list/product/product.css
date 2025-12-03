@@ -1,31 +1,105 @@
 .productContainer {
-    margin: 10px;
-    padding: 12px;
-    height: max-content;
-    border-radius: 5px;
-    border: 0px solid black;       
-    background-color: white;
-    box-shadow: 1px 1px 5px rgba(5, 0, 0, 0.3);
-    box-sizing: border-box;
-    flex: 1 1 250px;               
-    max-width: 300px;  
-    
-         
+  width: 260px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-.productContent {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Hover effect: subtle only */
+.productContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
-.productTitle {
-    font-size: 24px;
-    margin-bottom: 8px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* PRODUCT NAME + RATING ROW */
+.nameRatingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -6px;
+}
+
+/* Product Name */
+.productName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1d;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Rating Badge Right Side */
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #e9f5ff;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.ratingNumber {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f0f0f;
+}
+
+.ratingStar {
+  font-size: 14px;
+  color: #27241e;
+}
+
+/* Description */
+.productDescription {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.4;
+  height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -4px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Price */
+.productPrice {
+  font-size: 17px;
+  font-weight: 700;
+  color: #008c4a;    /* green shade for premium look */
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: "Roboto", sans-serif;
+}
+
+.rupeeIcon {
+  font-size: 16px;
+}
+
+/* Image Container */
+.imgContainer {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productImage {
-    width: 250px;                   
-    height: 200px;
-    border-radius: 5px;
-    object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }

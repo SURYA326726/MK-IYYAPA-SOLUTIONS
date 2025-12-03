@@ -1,20 +1,65 @@
-.TrustedOrgCmp{
-    flex-wrap: wrap;
-  padding: 2px;
-  margin: 5px;
-  background-color: white;
-  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+.TrustedOrgCmp {
+  width: 90%;
+  margin: 50px auto;
+  padding: 30px 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.04),
+    0 10px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.07);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.TrustedOrgCmp .trustedHeader {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.TrustedOrgCmp hr {
+  border: none;
+  height: 2px;
+  background: #0078ff;
+  width: 100px;
   border-radius: 4px;
- justify-items: center;
+  margin: 0 auto 25px auto;
 }
-.trustedHeader{
-    justify-self: center;
-  font-size: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.OrgName {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* spacing between logos */
 }
-.orgLogo{
-    border-radius: 200%;
+
+.orgLogo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.orgLogo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .orgLogo {
+    height: 50px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .orgLogo {
     height: 40px;
-    width: 40px;
-    margin: 5px;
+  }
 }

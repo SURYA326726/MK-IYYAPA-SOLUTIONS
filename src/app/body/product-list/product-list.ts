@@ -1,57 +1,38 @@
 import { Component } from '@angular/core';
 import { Product } from "./product/product";
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { ProductModal } from './product-modal/product-modal';
 
 
 @Component({
   selector: 'app-product-list',
-  imports: [Product, CommonModule],
+  imports: [ Product,CommonModule,ProductModal],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
 export class ProductList {
+   products:any = [];
 
-   products = [
-    {
-      productHeading: 'Emines',
-      productContent: 'Used to do Emine based works',
-      productImg: 'Emining.webp'
-    },
-    {
-      productHeading: 'Eschool',
-      productContent: 'Used to record school data',
-      productImg: 'Eschool.webp'
-    },
-    {
-      productHeading: 'Emines',
-      productContent: 'Used to do Emine based works',
-      productImg: 'Emining.webp'
-    },
-    {
-      productHeading: 'Eschool',
-      productContent: 'Used to record school data',
-      productImg: 'Eschool.webp'
-    },
-    {
-      productHeading: 'Emines',
-      productContent: 'Used to do Emine based works',
-      productImg: 'Emining.webp'
-    },
-    {
-      productHeading: 'Eschool',
-      productContent: 'Used to record school data',
-      productImg: 'Eschool.webp'
-    },
-    {
-      productHeading: 'Emines',
-      productContent: 'Used to do Emine based works',
-      productImg: 'Emining.webp'
-    },
-    {
-      productHeading: 'Eschool',
-      productContent: 'Used to record school data',
-      productImg: 'Eschool.webp'
-    }
-  ];
+     ngOnInit():void{
+    this.http.get('http://localhost:3000/products').subscribe((res:any)=>{
+      this.products=res.data;
+      
+    })
+  }
+
+  constructor(private http:HttpClient){
+
+  }
+  selectedProduct: any = null;
+
+showProductModal(product: any) {
+  console.log(product)
+  this.selectedProduct = product;
+}
+
+
+
+  
 
 }

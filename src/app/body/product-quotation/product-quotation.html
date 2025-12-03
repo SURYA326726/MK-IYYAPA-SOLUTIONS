@@ -1,0 +1,83 @@
+<div class="quotation-page">
+
+  <div class="main-container">
+
+    <!-- Product Section -->
+    <div class="product-section">
+      <div class="product-image">
+        <img [src]="'http://localhost:3000/productImages/' + product.productImage" alt="productImage">
+      </div>
+
+      <div class="product-details">
+        <h1>{{ product.productName }}</h1>
+        <p class="desc">{{ product.productDescription }}</p>
+
+        <div class="services">
+          <h3>Available Services:</h3>
+          <p>{{ product.productService }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Form Section -->
+    <div class="customer-form">
+      <h2>Create Quotation</h2>
+
+      <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+
+        <div class="form-row">
+          <label>Customer Name</label>
+          <input type="text" name="customerName" ngModel required />
+        </div>
+
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" name="email" ngModel required />
+        </div>
+
+        <div class="form-row">
+          <label>Phone</label>
+          <input type="text" name="phone" ngModel required />
+        </div>
+
+        <div class="form-row">
+          <label>Address</label>
+          <textarea name="address" rows="3" ngModel></textarea>
+        </div>
+
+        <h3>Quotation Details</h3>
+
+        <div class="form-row">
+          <label>Quantity</label>
+          <input type="number" name="quantity" [(ngModel)]="qty" (input)="calculateTotal()" required />
+        </div>
+
+        <div class="form-row">
+          <label>Price per Unit</label>
+          <input type="number" name="price" [(ngModel)]="price" (input)="calculateTotal()" required />
+        </div>
+
+        <div class="form-row">
+          <label>Discount (%)</label>
+          <input type="number" name="discount" [(ngModel)]="discount" (input)="calculateTotal()" />
+        </div>
+
+        <div class="form-row">
+          <label>GST (%)</label>
+          <input type="number" name="gst" [(ngModel)]="gst" (input)="calculateTotal()" />
+        </div>
+
+        <div class="total-box">
+          <h2>Total Amount: ₹ {{ total }}</h2>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="generate-btn">Generate Quote</button>
+          <button type="button" class="cancel-btn" (click)="goBack()">Cancel</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,9 +1,23 @@
-<div class="productContainer">
- 
-    <p class="productTitle">{{productContainer.productHeading}}</p>
-    <span class="productContent">{{productContainer.productContent}}</span>
+<div class="productContainer" (click)="openProduct()">
+  <div class="nameRatingRow">
+    <p class="productName">{{ productContainer.productName }}</p>
+
+    <div class="ratingBox">
+      <span class="ratingNumber">4.2</span>
+      <span class="ratingStar">★</span>
+    </div>
+  </div>
+
+  <span class="productDescription">
+    {{ productContainer.productDescription }}
+  </span>
+
+  <span class="productPrice">
+    <span class="rupeeIcon">₹</span>{{ productContainer.productPrice }}
+  </span>
 
   <div class="imgContainer">
-    <img [src]='productContainer.productImg' class="productImage"/>
+    <img [src]="'http://localhost:3000/productImages/' + productContainer.productImage"
+         class="productImage"/>
   </div>
 </div>

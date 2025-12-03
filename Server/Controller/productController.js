@@ -33,8 +33,20 @@ const {validationResult} =require('express-validator')
       console.log('Product is not added');
       return res.status(400).send({status:'failed',result:validateResult.array()})
     }
+ // Extract the fields from body
+    const { productName, productPrice, productDescription, productService } = req.body;
 
-    const newProduct = new Product(req.body);
+    // Multer provides the uploaded file details
+    const productImage = req.file ? req.file.filename : null;
+
+    // Create document manually including file name
+    const newProduct = new Product({
+      productName,
+      productImage,   
+      productPrice,
+      productDescription,
+      productService
+    });
     const savedProduct = await newProduct.save();
     res.status(201).json({ status: 'success', data: savedProduct });
     console.log('Product added successfully');

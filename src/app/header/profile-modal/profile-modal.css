@@ -1,0 +1,101 @@
+/* Invisible click layer */
+.dropdown-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+}
+
+/* Dropdown box fixed position */
+.dropdown-box {
+  position: fixed;         /* <-- FIXED so it does not move */
+  top: 65px;               /* adjust relative to navbar height */
+  right: 25px;             /* align below profile icon */
+  width: 180px;
+
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 0 10px 0;
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12),
+    0 8px 20px rgba(0,0,0,0.10);
+  z-index: 999;
+  animation: dropdownFade 0.2s ease-out;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 18px;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Arrow pointing up */
+.dropdown-box::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 18px;
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+/* Menu list */
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* space between icon + text */
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.menu-item .menu-icon {
+  font-size: 20px;
+  color: #0c0c0c;
+}
+
+.logout .menu-icon {
+  color: #d9534f;          /* red logout icon */
+}
+
+
+
+.logout {
+  color: #d9534f;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

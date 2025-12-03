@@ -1,30 +1,79 @@
-.contactCMP{
-    flex-wrap: wrap;
-  padding: 2px;
-  margin: 5px;
-  background-color: white;
-  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+/* Main Card */
+.contactCMP {
+  width: 90%;
+  margin: 40px auto;
+  padding: 35px 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 10px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Centered Header + HR */
+.contactCMP > div:first-child {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contactHeader {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contactCMP hr {
+  border: none;
+  height: 3px;
+  width: 140px;
+  background: #0078ff;
   border-radius: 4px;
- justify-items: center;
+  margin: 5px auto 0;
 }
-.contactHeader{
-    justify-self: center;
-  font-size: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+/* Content Text */
+.contactContent span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0 5px;
+  color: #333;
 }
-.contactContent{
-     align-self: center;
-     padding: 20px;
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+
+.contactContent p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 15px;
 }
+
+/* Buttons Container */
+.contactContent div {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
 .demoButton {
-  margin: 2%;
-  padding: 2%;
-  background-color: white;
-  border-radius: 5px;
-}
-.demoButton:hover {
-  background-color: black;
+  padding: 12px 25px;
+  background: #0078ff;
+  border: none;
   color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease;
+}
+
+.demoButton:hover {
+  background: #005fcc;
+  transform: scale(1.05);
 }

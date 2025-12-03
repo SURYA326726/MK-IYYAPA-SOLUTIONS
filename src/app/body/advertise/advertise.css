@@ -1,37 +1,89 @@
 .adContainer {
+  width: 90%;
+  margin: 30px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+
   display: flex;
-  right: 0;
-  margin: 5px;
-  height: 300px;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 1px 1px 5px rgba(9, 9, 9, 0.6);
+  align-items: center;
   justify-content: space-between;
+  gap: 40px;
+
+  /* Better card shadow */
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.05),
+    0 8px 20px rgba(0,0,0,0.10),
+    0 15px 25px rgba(0,0,0,0.08);
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.adContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 6px 12px rgba(0,0,0,0.08),
+    0 12px 28px rgba(0,0,0,0.12),
+    0 20px 35px rgba(0,0,0,0.10);
+}
+
 .adContent {
-  margin: 2px;
+  flex: 1;
 }
+
 .adHeader {
-  font-size: 2.5rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
 }
+
 .adParagh {
-  font-size: 25px;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  display: block;
+  margin: 15px 0;
+  font-family: "Poppins", sans-serif;
 }
+
 .demoButton {
-  margin: 2%;
-  padding: 2%;
-  background-color: white;
-  border-radius: 5px;
-}
-.demoButton:hover {
-  background-color: black;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #0078ff;
+  border: none;
   color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.demoButton:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+}
+
 .imgContainer {
-  height: auto;
-  width: 50%;
-  margin: 4px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px rgba(20, 20, 20, 0.6);
+  width: 42%;
+  max-width: 480px;
+  border-radius: 15px;
+  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .adContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .imgContainer {
+    width: 80%;
+  }
 }

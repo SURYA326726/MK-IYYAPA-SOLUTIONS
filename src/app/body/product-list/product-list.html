@@ -1,8 +1,28 @@
 <div class="productList">
-    <p class="productsHeading">Our products</p>
-    <hr>
-  <div class="products">
-    <app-product *ngFor="let prod of products"
-     [productContainer]="prod"></app-product>
+  <p class="productsHeading">Our products</p>
+  <hr />
+
+  <div class="productsContainer">
+    <div class="products">
+
+      @if (products.length === 0) {
+        <p class="empty-product-text">There is no products available now</p>
+      }
+      @else {
+        @for (prod of products; track $index) {
+          <app-product 
+              [productContainer]="prod"
+              (openModal)="showProductModal($event)">
+          </app-product>
+        }
+      }
+    </div>
   </div>
 </div>
+
+
+@if (selectedProduct) {
+  <app-product-modal
+     [product]="selectedProduct" (close)="selectedProduct=null"></app-product-modal>
+ 
+}

@@ -1,0 +1,36 @@
+<div class="modal-overlay"></div>
+
+<div class="product-modal">
+
+  <!-- Close Button (top-left) -->
+  <button class="close-btn" (click)="closeModal()">×</button>
+
+  <div class="modal-content">
+
+    <div class="modal-left">
+      <h1 class="product-title">{{ product.productName }}</h1>
+
+      <p class="product-description">
+        {{ product.productDescription }}
+      </p>
+
+      <div class="product-services">
+        <h3>Available Services</h3>
+        <p>{{ product.productService }}</p>
+      </div>
+    </div>
+
+    <div class="modal-right">
+      <img
+        class="modal-image"
+        [src]="'http://localhost:3000/productImages/' + product.productImage"
+        alt="Product Image"
+      />
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button class="quote-btn" (click)="navigateToQuote()">Get Quote</button>
+  </div>
+</div>

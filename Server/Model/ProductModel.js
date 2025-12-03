@@ -5,7 +5,7 @@ const productSchema= {
   productName: String,
   productPrice:Number,
   productDescription: String,
-  productService: String,
+  productService: String
 };
 
 const productModel=mongo.model('Product',productSchema)

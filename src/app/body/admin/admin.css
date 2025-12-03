@@ -1,59 +1,57 @@
 .productForm {
-    width: 400px;
-    margin: 100px auto;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-family: Arial, sans-serif;
+  width: 90%;
+  max-width: 600px;       /* limit form width */
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.04),
+    0 10px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.07);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;             /* space between fields */
+  box-sizing: border-box;
 }
 
 .productForm label {
-    font-weight: 600;
-    color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .productForm input[type="text"],
 .productForm input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: 0.3s;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-.productForm input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0,123,255,0.4);
+.productForm input[type="text"]:focus,
+.productForm input[type="file"]:focus {
+  border-color: #0078ff;
+  box-shadow: 0 0 5px rgba(0,120,255,0.3);
 }
 
-.productForm input[type="file"] {
-    padding: 6px;
-}
-.productForm button {
-    margin-top: 10px;
-    padding: 12px 18px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
+.productForm button[type="submit"] {
+  padding: 12px 25px;
+  background: #0078ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.productForm button:hover {
-    background: #0056cc;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.productForm button[type="submit"]:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
 }
-
-.productForm button:active {
-    transform: scale(0.97);
-}
-

@@ -1,0 +1,63 @@
+
+<div class="auth-container">
+
+  <div  class="auth-box">
+    <h2>Login</h2>
+
+    <div class="input-group">
+      <input type="text"  placeholder="Username" />
+    </div>
+
+    <div class="input-group">
+      <input type="password"  placeholder="Password" />
+    </div>
+
+    <button class="auth-btn" (click)="onLogin()">Login</button>
+
+    <div class="links">
+      <span (click)="switchScreen('forgot-username')">Forgot Username?</span>
+      <span (click)="switchScreen('forgot-password')">Forgot Password?</span>
+    </div>
+  </div>
+
+  <!-- section2 -->
+
+  <!-- FORGOT USERNAME SCREEN-->
+  <!-- <div class="auth-box">
+    <h2>Recover Username</h2>
+
+    <div class="input-group">
+      <input type="email" [(ngModel)]="recover.email" placeholder="Enter Registered Email" />
+    </div>
+
+    <button class="auth-btn" (click)="sendOtp()">Send OTP</button>
+    <span class="back" (click)="switchScreen('login')">Back to Login</span>
+  </div> -->
+
+  <!-- FORGOT PASSWORD SCREEN -->
+  <!-- <div  class="auth-box">
+    <h2>Reset Password</h2>
+
+    <div class="input-group">
+      <input type="text" [(ngModel)]="recover.username" placeholder="Enter Username" />
+    </div>
+
+    <button class="auth-btn" (click)="sendOtp()">Send OTP</button>
+    <span class="back" (click)="switchScreen('login')">Back to Login</span>
+  </div> -->
+
+  <!-- OTP VERIFY SCREEN -->
+  <!-- <div  class="auth-box">
+    <h2>Enter OTP</h2> -->
+<!-- 
+     <div class="otp-group">
+      <input maxlength="1" *ngFor="let d of otpInputs; let i = index"
+             (input)="moveNext($event, i)" #otpBox />
+    </div> 
+
+    <button class="auth-btn" (click)="verifyOtp()">Verify OTP</button>
+    <span class="back" (click)="switchScreen('login')">Back to Login</span>
+  </div> -->
+
+<!-- </div> --> 
+

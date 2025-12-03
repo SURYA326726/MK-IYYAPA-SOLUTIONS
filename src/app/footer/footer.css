@@ -1,33 +1,99 @@
-.footerCmp{
-    background-color: rgb(21, 19, 19);
-    display: flex;
-    padding: 15px 15px 1px 15px;
-    margin: 0;
+.footerCmp {
+  width: 100%;
+  background: #1f1f1f;  /* dark modern footer */
+  color: #f0f0f0;
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  border-top: 4px solid #0078ff;
 }
-.footerFieldTitle{
-    color: white;
-}
-.footerFieldContainer{
-    list-style: none;
-    color: aquamarine;
-    padding: 2px;
-}
-.footerFieldValue{
 
-    list-style: none;
-    color: aquamarine;
-    padding: 2px;
-    
+.footerField {
+  display: flex;
+  flex-direction: column;
 }
-.footerFieldSocial{
-     list-style: none;
-    color: aquamarine;
-    padding: 2px;
-    display: flex;
+
+.footerFieldTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
 }
-.socialLogos{
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    padding: 5px;
+
+.footerFieldContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerFieldValue {
+  font-size: 14px;
+  color: #cfcfcf;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footerFieldValue:hover {
+  color: #0078ff;
+}
+
+/* Horizontal line separator */
+.footerCmp hr {
+  grid-column: 1 / -1;
+  border: none;
+  height: 1px;
+  background: #444;
+  margin: 25px 0;
+}
+
+/* Social icons container */
+.footerFieldSocial {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.socialLogos {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.socialLogos:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* Footer address & paragraph text */
+.footerField p {
+  font-size: 14px;
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footerCmp {
+    padding: 40px 5%;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerCmp {
+    grid-template-columns: 1fr;  /* stack fields vertically */
+    padding: 30px 5%;
+  }
+
+  .footerFieldSocial {
+    justify-content: flex-start;
+  }
 }
