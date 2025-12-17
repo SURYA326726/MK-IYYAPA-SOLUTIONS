@@ -10,7 +10,9 @@ const productRouter=require('./Routes/productRoutes')
 
 app.use('/productImages',express.static(path.join(__dirname,'productImages')))
 app.use(cors({
-  origin: 'https://gomathtech.netlify.app/'
+  origin: "https://gomathtech.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 app.use(express.json());
 app.use(productRouter)
