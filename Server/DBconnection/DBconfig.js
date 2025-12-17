@@ -1,14 +1,16 @@
-const mongo = require('mongoose');
+const mongoose = require('mongoose');
 
 function ConnectDB() {
-  mongo
-    .connect('mongodb://localhost:27017/gomathTech')
+  mongoose
+    .connect(
+      'mongodb+srv://suryam726326_db_user:0bTOmVwYGT0tUEyL@gomathtechnology.eulokq1.mongodb.net/gomathDB?retryWrites=true&w=majority&appName=GomathTechnology'
+    )
     .then(() => {
       console.log('MongoDB connected successfully');
     })
     .catch((err) => {
-      console.log('MongoDB disconnected', err);
+      console.error('MongoDB connection error:', err.message);
     });
 }
 
-module.exports=ConnectDB;
+module.exports = ConnectDB;

@@ -13,11 +13,17 @@
       <p class="product-description">
         {{ product.productDescription }}
       </p>
+<div class="product-services">
+  <h3>Available Services</h3>
 
-      <div class="product-services">
-        <h3>Available Services</h3>
-        <p>{{ product.productService }}</p>
-      </div>
+<div class="service-list">
+  @for (service of productServices; track service) {
+    <span class="service-chip">
+      {{ service }}
+    </span>
+  }
+</div>
+</div>
     </div>
 
     <div class="modal-right">

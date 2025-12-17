@@ -1,12 +1,12 @@
-<form class="productForm">
-     <!-- (submit)="addProduct($event)" -->
+<form class="productForm" (submit)="addProduct($event)">
+     
     <label>product name</label>
-    <input type="text" placeholder="enter product name"/>
+    <input type="text" placeholder="enter product name" name="productName"/>
     <label>product image</label>
-    <input type="file" placeholder="upload your image"/>
+    <input type="file" placeholder="upload your image" name="productImage"/>
     <label>product description</label>
-    <input type="text" placeholder="enter product description"/>
+    <input type="text" placeholder="enter product description" name="productDescription"/>
     <label>product service</label>
-    <input type="text" placeholder="enter product service"/>
+    <input type="text" placeholder="enter product service" name="productService"/>
     <button type="submit" >add product</button>
 </form>

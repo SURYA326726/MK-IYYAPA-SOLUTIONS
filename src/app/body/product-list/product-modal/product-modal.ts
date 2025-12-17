@@ -20,4 +20,12 @@ export class ProductModal {
       this.router.navigate(['/newQuote'],{state:{product:this.product}})
       console.log(this.product.name)
   }
+get productServices(): string[] {
+  return this.product?.productService
+    ? this.product.productService
+        .split(',')
+        .map((s: string) => s.trim())
+    : [];
+}
+
 }
