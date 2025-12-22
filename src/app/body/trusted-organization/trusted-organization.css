@@ -1,65 +1,53 @@
-.TrustedOrgCmp {
-  width: 90%;
-  margin: 50px auto;
-  padding: 30px 40px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 
-    0 4px 8px rgba(0,0,0,0.04),
-    0 10px 20px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.07);
-  font-family: "Poppins", sans-serif;
+.trusted-section {
+  padding: 60px 5%;
+  background: var(--primary-bg);
   text-align: center;
+  border-bottom: 1px solid var(--glass-border);
 }
 
-.TrustedOrgCmp .trustedHeader {
-  font-size: 24px;
-  font-weight: 600;
-  color: #222;
-  display: block;
-  margin-bottom: 10px;
+.trusted-title {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.TrustedOrgCmp hr {
-  border: none;
-  height: 2px;
-  background: #0078ff;
-  width: 100px;
-  border-radius: 4px;
-  margin: 0 auto 25px auto;
-}
-
-.OrgName {
+.logos-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 40px;
   align-items: center;
-  gap: 30px; /* spacing between logos */
+  opacity: 0.8;
 }
 
-.orgLogo {
-  height: 60px;
+.org-logo {
+  height: 45px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
+  /* Make icons white/light gray by default for blue theme contrast if bg is dark, 
+     or just grayscale for light theme. User asked for "white and blue colour". 
+     If bg is white, white icons won't show. Assuming "white icon structure" means light gray or 
+     placeholder style, but if bg is white, we need contrast. 
+     Let's use a light blue-gray filter. */
+  filter: grayscale(100%) opacity(0.7); 
+  transition: all 0.3s ease;
 }
 
-.orgLogo:hover {
+.org-logo:hover {
+  filter: grayscale(0%) brightness(1) contrast(1);
+  opacity: 1;
   transform: scale(1.1);
-  filter: brightness(1.2);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-  .orgLogo {
-    height: 50px;
-    margin: 10px 0;
+  .logos-grid {
+    gap: 25px;
   }
-}
-
-@media (max-width: 480px) {
-  .orgLogo {
-    height: 40px;
+  .org-logo {
+    height: 35px;
   }
 }

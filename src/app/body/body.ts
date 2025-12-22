@@ -4,10 +4,22 @@ import { ProductList } from "./product-list/product-list";
 import { TrustedOrganization } from './trusted-organization/trusted-organization';
 import { AboutUs } from "./about-us/about-us";
 import { ContactUs } from "./contact-us/contact-us";
+import { Services } from "./services/services";
+import { TechStack } from "./tech-stack/tech-stack";
+import { Testimonials } from "./testimonials/testimonials";
 
 @Component({
   selector: 'app-body',
-  imports: [Advertise, ProductList, TrustedOrganization, AboutUs, ContactUs],
+  imports: [
+    Advertise, 
+    ProductList, 
+    TrustedOrganization, 
+    AboutUs, 
+    ContactUs,
+    Services,
+    TechStack,
+    Testimonials
+  ],
   templateUrl: './body.html',
   styleUrl: './body.css'
 })

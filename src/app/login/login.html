@@ -1,15 +1,15 @@
-
 <div class="auth-container">
 
+  @if (screen === 'login') {
   <div  class="auth-box">
     <h2>Login</h2>
 
     <div class="input-group">
-      <input type="text"  placeholder="Username" />
+      <input type="text" [(ngModel)]="login.username" placeholder="Username" />
     </div>
 
     <div class="input-group">
-      <input type="password"  placeholder="Password" />
+      <input type="password" [(ngModel)]="login.password" placeholder="Password" />
     </div>
 
     <button class="auth-btn" (click)="onLogin()">Login</button>
@@ -19,6 +19,7 @@
       <span (click)="switchScreen('forgot-password')">Forgot Password?</span>
     </div>
   </div>
+  }
 
   <!-- section2 -->
 
@@ -47,17 +48,23 @@
   </div> -->
 
   <!-- OTP VERIFY SCREEN -->
-  <!-- <div  class="auth-box">
-    <h2>Enter OTP</h2> -->
-<!-- 
-     <div class="otp-group">
-      <input maxlength="1" *ngFor="let d of otpInputs; let i = index"
-             (input)="moveNext($event, i)" #otpBox />
-    </div> 
+  @if (screen === 'otp') {
+  <div class="auth-box">
+    <h2>Enter OTP</h2>
+    <p class="otp-instruction">We've sent a code to your registered email.</p>
+
+    <div class="otp-group">
+      @for (d of otpInputs; track $index) {
+        <input maxlength="1" 
+             [(ngModel)]="otpInputs[$index]"
+             (input)="moveNext($event, $index)" 
+             class="otp-input" />
+      }
+    </div>
 
     <button class="auth-btn" (click)="verifyOtp()">Verify OTP</button>
     <span class="back" (click)="switchScreen('login')">Back to Login</span>
-  </div> -->
+  </div>
+  }
 
-<!-- </div> --> 
-
+<!-- </div> -->

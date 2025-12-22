@@ -1,0 +1,15 @@
+<div class="advertics-container">
+    <div class="advertics-header">
+        <h2>Our Products</h2>
+        <p>Featured items from our collection</p>
+    </div>
+    <div class="product-showcase">
+        <div *ngFor="let product of products" class="ad-card">
+            <img [src]="product.productImage" [alt]="product.productName">
+            <div class="ad-info">
+                <h3>{{ product.productName }}</h3>
+                <p>{{ product.productPrice }}</p>
+            </div>
+        </div>
+    </div>
+</div>

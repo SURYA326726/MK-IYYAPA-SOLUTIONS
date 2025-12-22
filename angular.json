@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "GomathTechnology": {
+    "NewVenus": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -22,6 +22,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -56,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "GomathTechnology:build:production"
+              "buildTarget": "NewVenus:build:production"
             },
             "development": {
-              "buildTarget": "GomathTechnology:build:development"
+              "buildTarget": "NewVenus:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,6 +84,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [

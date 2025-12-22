@@ -14,5 +14,5 @@ import { ProductQuotation } from "./body/product-quotation/product-quotation";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('GomathTechnology');
+  protected readonly title = signal('NewVenus');
 }

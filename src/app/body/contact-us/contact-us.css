@@ -1,79 +1,78 @@
-/* Main Card */
-.contactCMP {
-  width: 90%;
-  margin: 40px auto;
-  padding: 35px 30px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.04),
-    0 10px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+.contact-section {
+  padding: 100px 5%;
+  background: var(--primary-bg);
+  position: relative;
 }
 
-/* Centered Header + HR */
-.contactCMP > div:first-child {
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-header {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 
-.contactHeader {
-  font-size: 28px;
-  font-weight: 600;
-  color: #222;
-  display: block;
-  margin-bottom: 8px;
+.section-title {
+  font-size: 3rem;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  font-family: var(--font-main);
 }
 
-.contactCMP hr {
-  border: none;
-  height: 3px;
-  width: 140px;
-  background: #0078ff;
-  border-radius: 4px;
-  margin: 5px auto 0;
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
 }
 
-/* Content Text */
-.contactContent span {
-  display: block;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 10px 0 5px;
-  color: #333;
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: var(--glass-shadow);
+  text-align: center;
 }
 
-.contactContent p {
-  font-size: 15px;
-  color: #555;
+.contact-info h3 {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.address {
+  color: var(--text-muted);
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin: 0 0 15px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Buttons Container */
-.contactContent div {
-  margin-top: 20px;
+.contact-person {
+  margin-bottom: 40px;
+}
+
+.label {
+  display: block;
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.name {
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.actions {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
-}
-
-/* Buttons */
-.demoButton {
-  padding: 12px 25px;
-  background: #0078ff;
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: "Poppins", sans-serif;
-  transition: 0.3s ease;
-}
-
-.demoButton:hover {
-  background: #005fcc;
-  transform: scale(1.05);
 }

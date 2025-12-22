@@ -1,14 +1,15 @@
 .footerCmp {
   width: 100%;
-  background: #1f1f1f;  /* dark modern footer */
-  color: #f0f0f0;
-  padding: 50px 10%;
+  background: #020617; /* Darker background */
+  color: var(--text-muted);
+  padding: 80px 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  font-family: 'Poppins', sans-serif;
+  gap: 60px;
+  font-family: var(--font-main);
   box-sizing: border-box;
-  border-top: 4px solid #0078ff;
+  border-top: 1px solid var(--glass-border);
+  position: relative;
 }
 
 .footerField {
@@ -17,10 +18,11 @@
 }
 
 .footerFieldTitle {
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 15px;
-  color: #ffffff;
+  margin-bottom: 24px;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
 }
 
 .footerFieldContainer {
@@ -30,15 +32,16 @@
 }
 
 .footerFieldValue {
-  font-size: 14px;
-  color: #cfcfcf;
-  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .footerFieldValue:hover {
-  color: #0078ff;
+  color: var(--accent-cyan);
+  transform: translateX(5px);
 }
 
 /* Horizontal line separator */
@@ -46,14 +49,14 @@
   grid-column: 1 / -1;
   border: none;
   height: 1px;
-  background: #444;
-  margin: 25px 0;
+  background: var(--glass-border);
+  margin: 40px 0;
 }
 
 /* Social icons container */
 .footerFieldSocial {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   margin-top: 10px;
   padding: 0;
   list-style: none;

@@ -27,7 +27,11 @@ export class Login {
   }
 
   onLogin() {
-    alert('Logged In Successfully!');
+    if (this.login.username && this.login.password) {
+      this.screen = 'otp';
+    } else {
+      alert("Please enter credentials");
+    }
   }
 
   sendOtp() {
@@ -36,8 +40,8 @@ export class Login {
   }
 
   verifyOtp() {
-    alert('OTP Verified!');
-    this.screen = 'login';
+    // Navigate home after verification
+    window.location.href = '/'; 
   }
 
   moveNext(event: any, index: number) {

@@ -1,0 +1,31 @@
+<section class="clients-section">
+    <div class="container">
+      <h2 class="section-title">Our <span class="highlight">Clients</span></h2>
+      <div class="tabs">
+        <button [class.active]="activeTab === 'industrial'" (click)="setActiveTab('industrial')">Industrial Clients</button>
+        <button [class.active]="activeTab === 'institutional'" (click)="setActiveTab('institutional')">Institutional Clients</button>
+        <button [class.active]="activeTab === 'international'" (click)="setActiveTab('international')">International Clients</button>
+      </div>
+  
+      <div class="clients-grid" *ngIf="activeTab === 'industrial'">
+        <div class="client-card" *ngFor="let client of industrialClients">
+          <img [src]="client.image" [alt]="client.name">
+          <p>{{ client.name }}</p>
+        </div>
+      </div>
+  
+      <div class="clients-grid" *ngIf="activeTab === 'institutional'">
+        <div class="client-card" *ngFor="let client of institutionalClients">
+            <img [src]="client.image" [alt]="client.name">
+            <p>{{ client.name }}</p>
+        </div>
+      </div>
+  
+      <div class="clients-grid" *ngIf="activeTab === 'international'">
+        <div class="client-card" *ngFor="let client of internationalClients">
+            <img [src]="client.image" [alt]="client.name">
+            <p>{{ client.name }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
