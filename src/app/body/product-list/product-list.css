@@ -144,9 +144,9 @@
   }
   
   .productsGrid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile (fluid) */
-    gap: 15px;
-    padding: 0 10px;
+    grid-template-columns: 1fr; /* Single column list view on mobile */
+    gap: 10px; /* Reduced gap */
+    padding: 0 20px 0 40px; /* Reduced width with Left Margin space */
   }
 }
 

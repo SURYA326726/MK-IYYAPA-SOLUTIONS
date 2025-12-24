@@ -136,38 +136,53 @@
   transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness - List View */
+/* Mobile Responsiveness - List View */
 @media (max-width: 768px) {
   .productContainer {
-    padding: 10px;
-    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 50px 1fr; /* Ultra-compact image */
+    grid-template-areas: 
+      "image name"
+      "image desc";
+    align-items: center;
+    padding: 8px; /* Tighter padding */
+    border-radius: 10px;
     gap: 10px;
+    height: auto;
+    text-align: left;
+    min-height: 70px; /* Consistent minimum quality */
   }
 
   .imgContainer {
-    height: 120px; /* Smaller image on mobile */
-    border-radius: 8px;
+    grid-area: image;
+    width: 50px; /* Small 50px thumbnail */
+    height: 50px;
+    min-width: 50px;
+    border-radius: 6px;
+    margin: 0;
+    background: transparent;
+  }
+
+  .nameRatingRow {
+    grid-area: name;
+    margin-bottom: 0;
+  }
+
+  .productDescription {
+    grid-area: desc;
+    height: auto;
+    font-size: 0.75rem; /* Smaller text */
+    -webkit-line-clamp: 1; /* Only 1 line of description */
+    line-clamp: 1;
+    margin-top: 2px;
   }
 
   .productName {
     font-size: 0.9rem;
-    max-width: 100%; /* Allow full width */
-  }
-
-  .productPrice {
-    font-size: 1rem;
-  }
-
-  .ratingBox {
-    padding: 2px 6px;
-  }
-
-  .ratingNumber {
-    font-size: 0.7rem;
-  }
-  
-  .productDescription {
-    font-size: 0.8rem;
-    -webkit-line-clamp: 2; /* Limit description lines */
+    white-space: nowrap; /* Prevent wrapping for compactness if needed, or normal */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
   }
 }
