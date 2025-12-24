@@ -16,7 +16,7 @@
 
 .section-title {
   font-size: 3rem;
-  color: var(--text-main);
+  color: var(--accent-blue);
   margin-bottom: 16px;
   font-family: var(--font-main);
 }

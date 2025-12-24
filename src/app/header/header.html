@@ -6,8 +6,8 @@
    </button>
 
    <div class="logo-container" routerLink="/">
-      <img src="logo.png" class="logo">
-      <span class="logo-text">Gomath<span class="text-gradient">Tech</span></span>
+      <img src="New Venus Logo/NewVenus-HD-removebg.png" class="logo">
+      <span class="logo-text">New<span class="text-gradient">Venus</span></span>
    </div>
    
    <div class="nav-content" [class.active]="isMenuOpen">
@@ -34,4 +34,12 @@
    @if (showProfileModal) {
     <app-profile-modal (close)="toggleProfileModal()"></app-profile-modal>
    }
+
+   @if (showLoginModal) {
+    <div class="modal-overlay" (click)="toggleLoginModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+         <app-login [isModal]="true" (close)="toggleLoginModal()"></app-login>
+      </div>
+    </div>
+  }
 </div>

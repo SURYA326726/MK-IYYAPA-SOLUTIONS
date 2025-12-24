@@ -13,6 +13,33 @@
   font-family: var(--font-main);
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: var(--accent-blue);
+}
+
+.category-switch {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+}
+
+.category-btn:hover, .category-btn.active {
+  background: var(--primary-color);
+  color: var(--text-muted);;
+  border-color: var(--primary-color);
 }
 
 .logos-grid {
@@ -28,13 +55,7 @@
   height: 45px;
   width: auto;
   object-fit: contain;
-  /* Make icons white/light gray by default for blue theme contrast if bg is dark, 
-     or just grayscale for light theme. User asked for "white and blue colour". 
-     If bg is white, white icons won't show. Assuming "white icon structure" means light gray or 
-     placeholder style, but if bg is white, we need contrast. 
-     Let's use a light blue-gray filter. */
-  filter: grayscale(100%) opacity(0.7); 
-  transition: all 0.3s ease;
+
 }
 
 .org-logo:hover {

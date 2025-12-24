@@ -118,3 +118,42 @@
   border-color: var(--accent-blue);
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
+
+/* Modal Styles */
+.auth-container.is-modal {
+  background: transparent;
+  min-height: auto;
+  padding: 0;
+}
+
+.auth-container.is-modal .auth-box {
+  width: 100%;
+  max-width: 400px;
+  box-shadow: none;
+  border: none;
+  background: var(--card-bg);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: var(--text-main);
+  transform: rotate(90deg);
+}
+
+.close-btn .material-icons {
+  font-size: 24px;
+}

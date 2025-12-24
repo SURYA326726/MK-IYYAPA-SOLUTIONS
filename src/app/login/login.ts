@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -22,6 +22,9 @@ export class Login {
 
   otpInputs = ['', '', '', ''];
 
+  @Input() isModal: boolean = false;
+  @Output() close = new EventEmitter<void>();
+
   switchScreen(s: string) {
     this.screen = s;
   }
@@ -40,8 +43,16 @@ export class Login {
   }
 
   verifyOtp() {
-    // Navigate home after verification
-    window.location.href = '/'; 
+    if (this.isModal) {
+      this.close.emit();
+    } else {
+       // Navigate home after verification
+      window.location.href = '/'; 
+    }
+  }
+
+  closeModal() {
+    this.close.emit();
   }
 
   moveNext(event: any, index: number) {

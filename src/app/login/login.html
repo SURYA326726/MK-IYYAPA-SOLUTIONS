@@ -1,7 +1,12 @@
-<div class="auth-container">
+<div class="auth-container" [class.is-modal]="isModal">
 
   @if (screen === 'login') {
   <div  class="auth-box">
+    @if (isModal) {
+      <button class="close-btn" (click)="closeModal()">
+        <span class="material-icons">close</span>
+      </button>
+    }
     <h2>Login</h2>
 
     <div class="input-group">

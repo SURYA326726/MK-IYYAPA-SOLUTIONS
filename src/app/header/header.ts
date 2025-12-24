@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ProfileModal } from './profile-modal/profile-modal';
+import { Login } from '../login/login';
 
 @Component({
   selector: 'app-header',
-  imports: [ProfileModal],
+  imports: [ProfileModal, Login],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
@@ -37,8 +38,13 @@ export class Header {
     }
   }
 
+  showLoginModal = false;
+
+  toggleLoginModal() {
+    this.showLoginModal = !this.showLoginModal;
+  }
+
   onLogin() {
-    // Navigate to Login page
-    window.location.href = '/login'; 
+    this.toggleLoginModal();
   }
 }

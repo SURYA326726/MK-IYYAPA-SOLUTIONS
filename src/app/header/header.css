@@ -1,42 +1,51 @@
 .navbar {
   width: 100%;
-  height: 80px;
+  height: 85px; /* Slightly taller for better presence */
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(15px); /* Stronger blur */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
   position: fixed;
   top: 0;
   left: 0;
+  right: 0; /* Changed from width 100% to left/right 0 for better fixed behavior */
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Softer, deeper shadow */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.02);
 }
 
 .logo {
-  height: 45px;
+  height: 55px; /* Larger logo */
   width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800; /* Bolder text */
+  letter-spacing: -0.5px;
   color: var(--text-main);
   font-family: var(--font-main);
 }
 
 .text-gradient {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%); /* Fresh blue gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -61,8 +70,8 @@
 
 .menuItem {
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-weight: 600; /* Slightly bolder */
+  color: var(--accent-blue); /* Blue menu items */
   cursor: pointer;
   transition: color 0.3s ease;
   position: relative;
@@ -191,4 +200,39 @@
         width: 100%;
         box-sizing: border-box;
     }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 120px);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,14 +1,23 @@
 <section class="trusted-section">
   <div class="trusted-header">
     <h3 class="trusted-title">Trusted by Leading Organizations</h3>
+    <div class="category-switch">
+      @for (category of categories; track category) {
+        <button 
+          class="category-btn"
+          [class.active]="selectedCategory === category"
+          (click)="filterClients(category)">
+          {{ category }}
+        </button>
+      }
+    </div>
   </div>
+  
   <div class="logos-grid">
-    <img src="Org1.jpeg" class="org-logo" />
-    <img src="Org2.webp" class="org-logo" />
-    <img src="Org3.png" class="org-logo" />
-    <img src="Org4.webp" class="org-logo" />
-    <img src="Org5.webp" class="org-logo" />
-    <img src="Org6.webp" class="org-logo" />
-    <img src="Org7.webp" class="org-logo" />
+    @for (client of filteredClients; track client.name) {
+      <div class="client-item" [title]="client.name">
+        <img [src]="client.image" [alt]="client.name" class="org-logo" />
+      </div>
+    }
   </div>
 </section>
