@@ -1,28 +1,42 @@
-<div class="productList">
-  <p class="productsHeading">Our products</p>
+<div class="productListContainer">
+  <div class="headerColumn">
+      <p class="productsHeading">PRODUCTS / {{ selectedCategory }}</p>
+      
+      <div class="controlsRow">
+          <div class="filterContainer">
+              <select (change)="onCategoryChange($event)" class="categorySelect">
+                  <option value="All Products" [selected]="selectedCategory === 'All Products'">All Products</option>
+                  @for (category of categories; track $index) {
+                      <option [value]="category" [selected]="selectedCategory === category">
+                          {{ category }}
+                      </option>
+                  }
+              </select>
+          </div>
+
+          <div class="searchContainer">
+              <span class="searchIcon">🔍</span>
+              <input type="text" placeholder="Search products..." (input)="onSearch($event)" class="searchInput" />
+          </div>
+      </div>
+  </div>
   <hr />
 
-  <div class="productsContainer">
-    <div class="products">
-
+  <div class="productsGrid">
       @if (products.length === 0) {
-        <p class="empty-product-text">There is no products available now</p>
+          <p class="empty-product-text">No products found.</p>
+      } @else {
+          @for (prod of products; track $index) {
+              <app-product 
+                  [productContainer]="prod"
+                  (openModal)="showProductModal($event)">
+              </app-product>
+          }
       }
-      @else {
-        @for (prod of products; track $index) {
-          <app-product 
-              [productContainer]="prod"
-              (openModal)="showProductModal($event)">
-          </app-product>
-        }
-      }
-    </div>
   </div>
 </div>
 
-
 @if (selectedProduct) {
-  <app-product-modal
-     [product]="selectedProduct" (close)="selectedProduct=null"></app-product-modal>
- 
+<app-product-modal
+   [product]="selectedProduct" (close)="selectedProduct=null"></app-product-modal>
 }

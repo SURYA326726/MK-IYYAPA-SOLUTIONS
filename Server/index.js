@@ -5,6 +5,7 @@ const cors=require('cors');
 const app = express();
 const DBconnection=require('./DBconnection/DBconfig')
 const productRouter=require('./Routes/productRoutes')
+const loginRouter = require('./Routes/loginRoutes');
 
 
 
@@ -16,6 +17,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(productRouter)
+app.use(loginRouter);
 
 
 app.listen(3000, () => {

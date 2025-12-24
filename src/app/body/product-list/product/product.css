@@ -14,6 +14,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  height: 100%; /* Ensure full height in grid */
 }
 
 .productContainer:hover {
@@ -90,6 +91,7 @@
   text-overflow: ellipsis; /* Multiline? usually need -webkit-line-clamp */
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property */
   -webkit-box-orient: vertical;
   z-index: 1;
 }
@@ -132,4 +134,40 @@
 
 .productContainer:hover .productImage {
   transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .productContainer {
+    padding: 10px;
+    border-radius: 12px;
+    gap: 10px;
+  }
+
+  .imgContainer {
+    height: 120px; /* Smaller image on mobile */
+    border-radius: 8px;
+  }
+
+  .productName {
+    font-size: 0.9rem;
+    max-width: 100%; /* Allow full width */
+  }
+
+  .productPrice {
+    font-size: 1rem;
+  }
+
+  .ratingBox {
+    padding: 2px 6px;
+  }
+
+  .ratingNumber {
+    font-size: 0.7rem;
+  }
+  
+  .productDescription {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2; /* Limit description lines */
+  }
 }
