@@ -236,3 +236,76 @@
     transform: translateY(0);
   }
 }
+
+/* User Profile in Header */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  transition: 0.3s ease;
+}
+
+.user-profile:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+}
+
+.user-name {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.user-profile .material-icons {
+  font-size: 20px;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.user-profile:hover .material-icons {
+  color: var(--accent-red); /* Red for logout indication */
+}
+
+/* Session Expired Modal */
+.session-modal {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-expired-box {
+  background: var(--card-bg); /* Adaptive Background */
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease;
+  border: 1px solid var(--glass-border);
+}
+
+.warning-icon {
+  font-size: 64px;
+  color: #fbbf24; /* Amber/Warning color */
+  margin-bottom: 20px;
+}
+
+.session-expired-box h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-main); /* Adaptive Text */
+  font-weight: 700;
+}
+
+.session-expired-box p {
+  color: var(--text-muted); /* Adaptive Muted Text */
+  margin-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.5;
+}

@@ -33,19 +33,81 @@ export class Header {
   switchTo(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      this.isMenuOpen = false; // Close menu on selection
+      const headerOffset = 100; // Offset for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      this.isMenuOpen = false; // Close mobile menu
     }
   }
 
   showLoginModal = false;
+  showSessionExpiredModal = false;
+  userName: string | null = null;
+  isLoggedIn = false;
+  private sessionTimer: any;
+
+  ngOnInit() {
+    this.checkSession();
+  }
+
+  checkSession() {
+    const token = localStorage.getItem('session_token');
+    const expiry = localStorage.getItem('session_expiry');
+    const name = localStorage.getItem('user_name');
+
+    if (token && expiry && name) {
+      const remainingTime = parseInt(expiry, 10) - Date.now();
+      if (remainingTime > 0) {
+        this.userName = name;
+        this.isLoggedIn = true;
+        
+        // Clear any existing timer
+        if (this.sessionTimer) clearTimeout(this.sessionTimer);
+        
+        // Set timer for expiry
+        this.sessionTimer = setTimeout(() => {
+          this.handleSessionExpiry();
+        }, remainingTime);
+      } else {
+        this.logout();
+      }
+    }
+  }
+
+  handleSessionExpiry() {
+    this.logout(false); // Logout without reload first
+    this.showSessionExpiredModal = true;
+  }
+
+  closeSessionExpiredModal() {
+    this.showSessionExpiredModal = false;
+    window.location.reload();
+  }
+
+  logout(reload: boolean = true) {
+    if (this.sessionTimer) clearTimeout(this.sessionTimer);
+    localStorage.removeItem('session_token');
+    localStorage.removeItem('session_expiry');
+    localStorage.removeItem('user_name');
+    this.userName = null;
+    this.isLoggedIn = false;
+    if (reload) window.location.reload();
+  }
 
   toggleLoginModal() {
-    this.showLoginModal = !this.showLoginModal;
-    if (this.showLoginModal) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
+    if (!this.isLoggedIn) {
+      this.showLoginModal = !this.showLoginModal;
+      if (this.showLoginModal) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
     }
   }
 

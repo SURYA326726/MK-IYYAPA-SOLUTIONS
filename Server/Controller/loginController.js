@@ -1,17 +1,23 @@
 const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { name, mobile } = req.body;
         
-        // Hardcoded validation as requested
-        // default username as test@test.com
-        // password is Aabb@3344
-        if (email === "test@test.com" && password === "Aabb@3344") {
+        // Validation: Verify both fields are provided
+        if (name && mobile) {
+            // Generate session expiry (1 minute from now)
+            const expiresIn = 1 * 60 * 1000; // 1 minute in ms
+            const expiryTime = Date.now() + expiresIn;
+
             return res.status(200).json({ 
                 message: "Login successful",
-                user: { email: email } 
+                user: { 
+                    mobile,
+                    token: 'mock-session-token-' + Date.now(),
+                    expiry: expiryTime
+                }
             });
         } else {
-            return res.status(401).json({ message: "Invalid credentials" });
+            return res.status(401).json({ message: "Invalid credentials. Please provide Name and Mobile Number." });
         }
     } catch (error) {
         console.error("Login error:", error);

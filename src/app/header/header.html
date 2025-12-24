@@ -27,7 +27,14 @@
             <span class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</span>
          </button>
 
-         <button class="btn-primary login-btn" (click)="onLogin()">Login</button>
+         @if (isLoggedIn) {
+            <div class="user-profile" (click)="logout()" title="Click to Logout">
+               <span class="user-name">{{ userName }}</span>
+               <span class="material-icons">logout</span>
+            </div>
+         } @else {
+            <button class="btn-primary login-btn" (click)="onLogin()">Login</button>
+         }
       </div>
    </div>
 
@@ -39,6 +46,19 @@
     <div class="modal-overlay" (click)="toggleLoginModal()">
       <div class="modal-content" (click)="$event.stopPropagation()">
          <app-login [isModal]="true" (close)="toggleLoginModal()"></app-login>
+      </div>
+    </div>
+  }
+
+  @if (showSessionExpiredModal) {
+    <div class="modal-overlay">
+      <div class="modal-content session-modal" (click)="$event.stopPropagation()">
+         <div class="session-expired-box">
+            <span class="material-icons warning-icon">warning</span>
+            <h2>Session Expired</h2>
+            <p>Your session has expired. Please log in again to continue.</p>
+            <button class="btn-primary" (click)="closeSessionExpiredModal()">OK</button>
+         </div>
       </div>
     </div>
   }

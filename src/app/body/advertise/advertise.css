@@ -82,7 +82,7 @@
   justify-content: space-between;
   padding: 80px 5%;
   min-height: 85vh;
-  background: radial-gradient(circle at 60% 50%, #1e293b 0%, var(--primary-bg) 60%);
+  background: var(--primary-bg);
   position: relative;
   overflow: hidden;
 }
@@ -111,45 +111,95 @@
   background-clip: text;
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  margin-bottom: 40px;
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted); /* Adaptive */
   line-height: 1.6;
-  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.hero-description p {
+  margin-bottom: 15px;
+}
+
+.why-choose-us {
+  margin-top: 20px;
+  background: var(--glass-bg); /* Adaptive glass */
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-cyan);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--glass-border);
+}
+
+.why-choose-us h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main); /* Adaptive */
+  margin-bottom: 10px;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-choose-us li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: var(--text-muted); /* Adaptive */
+}
+
+.why-choose-us li::before {
+  content: "•";
+  color: var(--accent-cyan);
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
 }
 
 .hero-actions {
   display: flex;
   gap: 16px;
+  margin-top: 30px;
 }
 
 .hero-visual {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-start; /* Move image to top */
+  padding-top: 10px; /* Slight padding from top */
   position: relative;
   perspective: 1000px;
+  height: 500px; 
 }
 
 .hero-image {
-  max-width: 100%;
-  height: auto;
-  min-width: 500px;
-  filter: drop-shadow(0 0 40px rgba(6, 182, 212, 0.15));
+  width: 500px; 
+  height: 400px; 
+  object-fit: contain; 
+  /* White/Cyan Glow for separation */
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.25)); 
   animation: float 6s ease-in-out infinite;
   transform-style: preserve-3d;
+  background: white; 
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: -20px; /* Pull up further */
 }
 
 .visual-glow {
   position: absolute;
-  top: 50%;
+  top: 40%; /* Move glow up with image */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
+  width: 500px; /* Reduced size */
+  height: 500px;
   background: var(--accent-blue);
-  opacity: 0.1;
+  opacity: 0.05; /* Reduced opacity */
   filter: blur(80px);
   border-radius: 50%;
   z-index: -1;

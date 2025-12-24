@@ -4,8 +4,7 @@
     <div class="category-switch">
       @for (category of categories; track category) {
         <button 
-          class="category-btn"
-          [class.active]="selectedCategory === category"
+          [class]="selectedCategory === category ? 'btn-primary' : 'btn-secondary'"
           (click)="filterClients(category)">
           {{ category }}
         </button>

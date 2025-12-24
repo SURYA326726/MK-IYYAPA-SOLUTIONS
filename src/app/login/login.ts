@@ -11,8 +11,8 @@ export class Login {
  screen: string = 'login';   // login | forgot-username | forgot-password | otp
 
   login = {
-    username: '',
-    password: ''
+    name: '',
+    mobile: ''
   };
 
   recover = {
@@ -20,7 +20,7 @@ export class Login {
     username: ''
   };
 
-  otpInputs = ['', '', '', ''];
+  // otpInputs = ['', '', '', '', '', '']; // Removed OTP
 
   @Input() isModal: boolean = false;
   @Output() close = new EventEmitter<void>();
@@ -30,7 +30,7 @@ export class Login {
   }
 
   async onLogin() {
-    if (this.login.username && this.login.password) {
+    if (this.login.name && this.login.mobile) {
       try {
         const response = await fetch('http://localhost:3000/login', {
           method: 'POST',
@@ -38,15 +38,37 @@ export class Login {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            email: this.login.username, // Mapping username input to email
-            password: this.login.password
+            name: this.login.name,
+            mobile: this.login.mobile
           })
         });
 
         const data = await response.json();
 
         if (response.ok) {
-          this.screen = 'otp';
+           // Direct Login Success
+           if (this.isModal) {
+            // Store session (Client-side 1 minute timer for accuracy)
+            const oneMinute = 60 * 1000;
+            const expiry = Date.now() + oneMinute;
+            
+            localStorage.setItem('user_name', this.login.name); 
+            localStorage.setItem('session_token', data.user.token);
+            localStorage.setItem('session_expiry', expiry.toString());
+            
+            // Reload to update header
+            window.location.reload();
+            this.close.emit();
+          } else {
+             // Navigate home
+            const oneMinute = 60 * 1000;
+            const expiry = Date.now() + oneMinute;
+
+            localStorage.setItem('user_name', this.login.name);
+            localStorage.setItem('session_token', data.user.token);
+            localStorage.setItem('session_expiry', expiry.toString());
+            window.location.href = '/'; 
+          }
         } else {
           alert(data.message || 'Login failed');
         }
@@ -59,19 +81,9 @@ export class Login {
     }
   }
 
-  sendOtp() {
-    alert('OTP Sent!');
-    this.screen = 'otp';
-  }
-
-  verifyOtp() {
-    if (this.isModal) {
-      this.close.emit();
-    } else {
-       // Navigate home after verification
-      window.location.href = '/'; 
-    }
-  }
+  // sendOtp() {} // Removed
+  // verifyOtp() {} // Removed
+  // moveNext() {} // Removed
 
   closeModal() {
     this.close.emit();
@@ -79,7 +91,7 @@ export class Login {
 
   moveNext(event: any, index: number) {
     const input = event.target;
-    if (input.value && index < 3) {
+    if (input.value && index < 5) {
       input.nextElementSibling.focus();
     }
   }

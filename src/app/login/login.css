@@ -99,15 +99,15 @@
 .otp-group {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
 .otp-group input {
-  width: 50px;
-  height: 55px;
+  width: 45px;
+  height: 50px;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid var(--glass-border);

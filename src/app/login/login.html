@@ -10,19 +10,19 @@
     <h2>Login</h2>
 
     <div class="input-group">
-      <input type="text" [(ngModel)]="login.username" placeholder="Username" />
+      <input type="text" [(ngModel)]="login.name" placeholder="Name or Organization Name" />
     </div>
 
     <div class="input-group">
-      <input type="password" [(ngModel)]="login.password" placeholder="Password" />
+      <input type="tel" [(ngModel)]="login.mobile" placeholder="Mobile Number" />
     </div>
 
-    <button class="auth-btn" (click)="onLogin()">Login</button>
+    <button class="auth-btn" (click)="onLogin()">Continue</button>
 
-    <div class="links">
+    <!-- <div class="links">
       <span (click)="switchScreen('forgot-username')">Forgot Username?</span>
       <span (click)="switchScreen('forgot-password')">Forgot Password?</span>
-    </div>
+    </div> -->
   </div>
   }
 
@@ -52,24 +52,6 @@
     <span class="back" (click)="switchScreen('login')">Back to Login</span>
   </div> -->
 
-  <!-- OTP VERIFY SCREEN -->
-  @if (screen === 'otp') {
-  <div class="auth-box">
-    <h2>Enter OTP</h2>
-    <p class="otp-instruction">We've sent a code to your registered email.</p>
 
-    <div class="otp-group">
-      @for (d of otpInputs; track $index) {
-        <input maxlength="1" 
-             [(ngModel)]="otpInputs[$index]"
-             (input)="moveNext($event, $index)" 
-             class="otp-input" />
-      }
-    </div>
-
-    <button class="auth-btn" (click)="verifyOtp()">Verify OTP</button>
-    <span class="back" (click)="switchScreen('login')">Back to Login</span>
-  </div>
-  }
 
 <!-- </div> -->

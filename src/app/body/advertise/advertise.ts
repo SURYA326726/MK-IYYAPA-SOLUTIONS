@@ -9,15 +9,15 @@ import { Component } from '@angular/core';
 export class Advertise {
   imageIndex = 0;
   
-  // List of images to cycle through (using product paths)
+  // List of images to cycle through
   images: string[] = [
-    'hero-bg.png', // Start with hero
-    'PRODUCTS/Education Engineering Equipments/ASTM Distillation.png',
-    'PRODUCTS/Electrochemical cells/Electrochemical Cell.png',
-    'PRODUCTS/Laboratory Instruments/Muffle Furnace.png',
+    'hero-bg.png',
+    'PRODUCTS/Education Engineering Equipments/Bio Diesel Plant.png',
+    'PRODUCTS/Electrochemical cells/H-Cell.png',
+    'PRODUCTS/Gas Purity Test Instruments/Orsat Apparatus.png',
+    'PRODUCTS/Glasswares/Burette.png',
     'PRODUCTS/Laboratory Platinum Wares/Platinum Labwares.png',
-    'PRODUCTS/PETROELUM TESTING INSTRUMENTS/All Glass Distillation Unit.png',
-    'PRODUCTS/PILOT PLANTS/Distillation Plant.png'
+    'PRODUCTS/PETROELUM TESTING INSTRUMENTS/All Glass Distillation Unit.png'
   ];
 
   currentImage = this.images[0];
@@ -26,6 +26,34 @@ export class Advertise {
     setInterval(() => {
       this.imageIndex = (this.imageIndex + 1) % this.images.length;
       this.currentImage = this.images[this.imageIndex];
-    }, 8000); // 8 seconds
+    }, 2000); // 2 seconds
+  }
+
+  scrollToProducts() {
+    const element = document.getElementById('productList');
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  scrollToContact() {
+    const element = document.getElementById('contactUs');
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   }
 }
