@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 .productContainer {
   width: 100%;
   background: var(--card-bg);
@@ -180,9 +185,9 @@
 
   .productName {
     font-size: 0.9rem;
-    white-space: nowrap; /* Prevent wrapping for compactness if needed, or normal */
+    white-space: normal; /* Allow wrapping */
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip; /* No ellipsis needed if wrapping */
     font-weight: 600;
   }
 }
