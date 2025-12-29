@@ -12,12 +12,10 @@ export class Advertise {
   // List of images to cycle through
   images: string[] = [
     'hero-bg.png',
-    'PRODUCTS/Education Engineering Equipments/Bio Diesel Plant.png',
-    'PRODUCTS/Electrochemical cells/H-Cell.png',
-    'PRODUCTS/Gas Purity Test Instruments/Orsat Apparatus.png',
-    'PRODUCTS/Glasswares/Burette.png',
-    'PRODUCTS/Laboratory Platinum Wares/Platinum Labwares.png',
-    'PRODUCTS/PETROELUM TESTING INSTRUMENTS/All Glass Distillation Unit.png'
+    'civil.svg',
+    'electrical.svg',
+    'it_support.svg',
+    'solar.svg'
   ];
 
   currentImage = this.images[0];

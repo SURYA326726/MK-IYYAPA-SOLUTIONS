@@ -18,6 +18,7 @@
   box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
+  /* Logo container styling */
 .logo-container {
   display: flex;
   align-items: center;
@@ -31,21 +32,22 @@
 }
 
 .logo {
-  height: 55px; /* Larger logo */
+  height: 55px;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .logo-text {
   font-size: 1.8rem;
-  font-weight: 800; /* Bolder text */
+  font-weight: 800;
   letter-spacing: -0.5px;
+  text-transform: uppercase; /* Uppercase for premium feel */
   color: var(--text-main);
   font-family: var(--font-main);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%); /* Fresh blue gradient */
+  background: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%); /* Red gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -56,24 +58,26 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-left: auto; /* Push to right */
+  margin-left: auto;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 40px; /* Increased gap */
   padding: 0;
   margin: 0;
   align-items: center;
 }
 
 .menuItem {
-  font-size: 1rem;
-  font-weight: 600; /* Slightly bolder */
-  color: var(--accent-blue); /* Blue menu items */
+  font-size: 0.9rem; /* Slightly smaller for elegance */
+  font-weight: 600;
+  text-transform: uppercase; /* Uppercase menu */
+  letter-spacing: 1px; /* Spaced out */
+  color: var(--text-main); /* Dark text */
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
   display: flex;
   align-items: center;
@@ -81,7 +85,23 @@
 }
 
 .menuItem:hover {
-  color: var(--accent-blue);
+  color: var(--accent-blue); /* Red on hover */
+  transform: translateY(-1px);
+}
+
+.menuItem::after { /* Underline effect */
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width 0.3s ease;
+}
+
+.menuItem:hover::after {
+  width: 100%;
 }
 
 /* Actions */

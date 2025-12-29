@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f8f8f8"/>
+  <path d="M90 20l-40 80h60l-20 80 80-90h-50l30-70H90z" fill="#d32f2f"/>
+  <text x="50%" y="185" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Electrical Services</text>
+</svg>

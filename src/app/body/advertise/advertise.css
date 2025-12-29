@@ -52,7 +52,7 @@
 .demoButton {
   margin-top: 20px;
   padding: 12px 25px;
-  background: #0078ff;
+  background: var(--accent-blue);
   border: none;
   color: white;
   font-size: 16px;
@@ -63,7 +63,7 @@
 }
 
 .demoButton:hover {
-  background: #005fcc;
+  background: var(--accent-purple);
   transform: scale(1.05);
 }
 

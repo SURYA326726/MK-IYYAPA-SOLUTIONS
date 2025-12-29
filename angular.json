@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "NewVenus": {
+    "MKIyyappaSolutions": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "NewVenus:build:production"
+              "buildTarget": "MKIyyappaSolutions:build:production"
             },
             "development": {
-              "buildTarget": "NewVenus:build:development"
+              "buildTarget": "MKIyyappaSolutions:build:development"
             }
           },
           "defaultConfiguration": "development"

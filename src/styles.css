@@ -1,42 +1,42 @@
 /* Global Styles */
 :root {
-  /* Light Theme (Default - White & Blue) */
-  --primary-bg: #f8fafc;       /* Slate 50 */
-  --card-bg: #ffffff;          /* White */
+  /* Light Theme (Default - White & Red) */
+  --primary-bg: #ffffff;       /* White */
+  --card-bg: #fdfdfd;          /* Off White */
   --text-main: #1e293b;        /* Slate 800 */
   --text-muted: #64748b;       /* Slate 500 */
   
-  --accent-cyan: #06b6d4;      /* Cyan 500 (kept for accents) */
-  --accent-blue: #0078ff;      /* Brand Blue */
-  --accent-purple: #7c3aed;    /* Violet 600 */
+  --accent-cyan: #ff5252;      /* Red Accent 1 */
+  --accent-blue: #d32f2f;      /* Primary Red (replacing Blue) */
+  --accent-purple: #b71c1c;    /* Dark Red (replacing Purple) */
   
-  --gradient-primary: linear-gradient(135deg, #0078ff 0%, #00d2ff 100%);
-  --gradient-secondary: linear-gradient(135deg, #0078ff 0%, #7c3aed 100%);
+  --gradient-primary: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%);
+  --gradient-secondary: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
   
   --font-main: 'Poppins', sans-serif;
   
-  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(0, 0, 0, 0.08);
   --glass-shadow: 0 4px 20px -5px rgba(0,0,0,0.1);
 }
 
 /* Dark Mode Override */
 .dark-mode {
-  --primary-bg: #020617; 
-  --card-bg: #0f172a;    
+  --primary-bg: #1a1a1a; 
+  --card-bg: #2d2d2d;    
   --text-main: #f8fafc;  
-  --text-muted: #94a3b8; 
+  --text-muted: #a1a1a1; 
   
-  --accent-cyan: #06b6d4;  
-  --accent-blue: #3b82f6;  
-  --accent-purple: #a855f7; 
+  --accent-cyan: #ff8a80;  
+  --accent-blue: #ff5252;  
+  --accent-purple: #d32f2f; 
   
-  --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
   --gradient-secondary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   
-  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-bg: rgba(45, 45, 45, 0.8);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -70,7 +70,7 @@ ul {
 .btn-primary {
   display: inline-block;
   background: var(--accent-blue); /* Solid blue or gradient */
-  background: linear-gradient(135deg, #0078ff 0%, #0056b3 100%); /* Stronger Blue Gradient */
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); /* Stronger Red Gradient */
   color: white;
   padding: 12px 32px;
   border-radius: 9999px;
@@ -78,12 +78,12 @@ ul {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 120, 255, 0.4); /* Blue shadow */
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4); /* Red shadow */
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 120, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
 }
 
 .btn-secondary {

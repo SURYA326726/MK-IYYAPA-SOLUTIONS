@@ -1,27 +1,28 @@
 .footerCmp {
   width: 100%;
-  background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 40%, #020617 100%);
-  color: #94a3b8; /* Soft slate text */
-  padding: 60px 8%;
+  background: #ffffff;
+  color: var(--text-main);
+  padding: 80px 10%; /* More spacious */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   box-sizing: border-box;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0,0,0,0.05); /* Subtle border instead of thick red line */
   position: relative;
-  overflow: hidden; /* For any background effects */
+  overflow: hidden;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.02); /* Very subtle lift */
 }
 
-/* Subtle glow effect at top */
+/* Red accent top bar */
 .footerCmp::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.5), transparent);
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-blue), #ff5252); /* Red gradient bar */
 }
 
 .footerField {
@@ -30,185 +31,99 @@
 }
 
 .footerFieldTitle {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 28px;
-  color: #f8fafc; /* Crisp white */
+  margin-bottom: 30px;
+  color: var(--text-main); /* Dark title */
   position: relative;
   display: inline-block;
 }
 
+/* Small red dash under title */
 .footerFieldTitle::after {
   content: '';
   display: block;
-  width: 40px;
-  height: 2px;
-  background: #38bdf8; /* Cyan accent */
-  margin-top: 8px;
+  width: 30px;
+  height: 3px;
+  background: var(--accent-blue); /* Red accent */
+  margin-top: 12px;
   border-radius: 2px;
 }
 
-.footerFieldContainer {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footerFieldValue {
-  font-size: 1rem;
-  color: #bdc5e1;
-  margin-bottom: 16px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  line-height: 1.6;
-}
-
-.footerFieldValue:hover {
-  color: #38bdf8;
-  transform: translateX(6px);
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
-}
-
-/* Horizontal line separator */
-.footerCmp hr {
-  grid-column: 1 / -1;
-  border: none;
-  height: 1px;
-  background: var(--glass-border);
-  margin: 40px 0;
-}
-
-/* Social icons container */
-/* Social icons container */
-.footerFieldSocial {
-  display: flex;
-  gap: 20px;
-  margin-top: 15px;
-  padding: 0;
-  list-style: none;
-}
-
-.socialLogos {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0.8;
-  filter: grayscale(100%); /* Start clean/monochrome if desired, or keep color */
-}
-
-/* On hover, bring back color and glow */
-.social-links:hover .socialLogos, 
-.socialLogos:hover {
-  transform: scale(1.2) translateY(-3px);
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-
-/* Footer address & paragraph text */
-.footerField p {
+.footerDesc {
   font-size: 0.95rem;
-  color: #94a3b8;
+  color: #666; /* Muted text */
   line-height: 1.8;
-  margin: 6px 0;
-  font-weight: 400;
+  max-width: 400px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .footerCmp {
-    padding: 40px 5%;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footerCmp {
-    grid-template-columns: 1fr;  /* stack fields vertically */
-    padding: 30px 5%;
-  }
-
-  .footerFieldSocial {
-    justify-content: flex-start;
-  }
-}
-
-.inline-contact-link,
-.social-links > a[href*="maps"] {
+/* Contact Links */
+.inline-contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   text-decoration: none;
-  color: #bdc5e1;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 10px 20px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  color: #444;
+  background: white;
+  border: 1px solid #eee;
+  padding: 12px 24px;
+  border-radius: 12px; /* Soft rounding */
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   margin-bottom: 12px;
   width: fit-content;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-.inline-contact-link:hover,
-.social-links > a[href*="maps"]:hover {
-  background: rgba(56, 189, 248, 0.1);
-  border-color: rgba(56, 189, 248, 0.3);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.inline-contact-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(211, 47, 47, 0.1); /* Red glow */
+  border-color: rgba(211, 47, 47, 0.2);
 }
 
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+.copy-text {
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
-/* Premium Copyright / Mandatory Label Styling */
+/* Address */
+.footerAddress {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 2;
+  font-style: normal;
+}
+
 .mandatory-label {
   text-align: center;
-  padding: 30px 20px;
-  background: #020617; /* Match darkest gradient tone */
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle glass border */
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
-  color: #64748b; /* Muted slate */
+  padding: 25px 0;
+  background: #fcfcfc;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.8rem;
+  color: #888;
   letter-spacing: 0.5px;
-  margin-top: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.mandatory-label p {
-  margin: 0;
-  line-height: 1.6;
 }
 
 .mandatory-label a {
-  color: #94a3b8;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: color 0.2s;
+  color: #888;
 }
 
 .mandatory-label a:hover {
-  color: #38bdf8; /* Cyan accent */
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  color: var(--accent-blue);
 }
 
 /* Mobile Polish */
 @media (max-width: 768px) {
-  .inline-contact-link,
-  .social-links > a[href*="maps"] {
-    width: 100%; /* Full width on mobile for easier tapping */
-    box-sizing: border-box;
-    justify-content: center; /* Center content */
-    padding: 12px 20px;
+  .footerCmp {
+    padding: 60px 6%;
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+  
+  .inline-contact-link {
+    width: 100%;
+    justify-content: center;
   }
 }

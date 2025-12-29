@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#f8f8f8"/>
+  <rect x="40" y="40" width="120" height="80" rx="5" fill="#d32f2f"/>
+  <rect x="60" y="55" width="80" height="50" fill="#fff"/>
+  <rect x="85" y="120" width="30" height="20" fill="#333"/>
+  <rect x="60" y="140" width="80" height="10" rx="2" fill="#333"/>
+  <text x="50%" y="185" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">IT Support</text>
+</svg>
