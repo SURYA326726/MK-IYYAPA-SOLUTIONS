@@ -1,3 +1,3 @@
 [build]
-  publish = "dist/NewVenus/browser"
+  publish = "dist/MKIyyappaSolutions/browser"
   command = "npm run build"
